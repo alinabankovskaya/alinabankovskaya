@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Esperanto by Alina</title>
+  <style>
+          * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            background-color: #e9dcb8;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+        }
+        
+        header {
+            background-color: #c7b78b;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            width: 100%;
+        }
+        
+        .Logo, .Top_menu {
+            padding: 20px;
+            margin-right: 25px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        
+        .Top_menu li {
+            margin-right: 25px;
+            display: inline-block;
+            vertical-align: middle;
+            font-weight: bold;
+        }
+        
+        .Top_menu a {
+            font-family: arial;
+            font-size: 20px;
+            color: #363326;
+            text-decoration: none;
+            vertical-align: middle;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+        
+        .Top_menu a:hover {
+            color: #635c45;
+        }
+        
+        .Logo h1 {
+            font-family: arial;
+            font-size: 30px;
+            vertical-align: middle;
+            color: #363326;
+        }
+        input {
+      font-size: 1rem;
+      background-color: #ffffff;
+      color: rgb(0, 0, 0);
+      border-radius: 4px;
+      border: 1px solid #000000;
+      cursor: pointer;
+    }
+    img{
+      height: 50px;
+      width: 450px;
+    }
+    .Logo a{
+      text-decoration: none;
+    }
+    </style>
+  </style>
+</head>
+<body>
+  <header>
+    <div class="All_header_menu">
+      <div class="Logo">
+        <a href="1.html"><h1>Alina</h1></a>
+      </div>
+      <div class="Top_menu">
+        <ul>
+          <li><a href="project0.html">0</a></li>
+          <li><a href="project1.html">1</a></li>
+          <li><a href="project2.html">2</a></li>
+          <li><a href="project3.html">3</a></li>
+          <li><a href="project4.html">4</a></li>
+          <li><a href="project5.html">5</a></li>
+          <li><a href="project6.html">6</a></li>
+          <li><a href="project7.html">7</a></li>
+          <li><a href="project8.html">8</a></li>
+          <li><a href="project9.html">9</a></li>
+          <li><a href="Handouts.html">Handouts</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+ <hr>
+  <form method="post" action="./LoginPage.aspx?ReturnUrl=%2fA%2f" id="ctl00">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJLTc4MTU1Mzg0ZGQBgu6eoB2qHySWgjBIuP9+1UlVfK/AK5nc8BXayx29PQ==">
+</div>
+
+<div class="aspNetHidden">
+
+  <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="F0C7EF03">
+  <input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAAS4lFPrkfZjAQxr0bHthAuy8U64O7P3hu9FCADqHdzsakdSwSl9T9cYdvdEUMk3rEVcCvP9YJ59uTpXZUTciHnZlpxdJPBWD3JqI1hXK+AQgROlvlKxsSj0jJ1wCgIfL5E=">
+</div>
+    <table cellpadding="8">
+      <tbody><tr>
+        <td rowspan="2">
+          <input type="submit" name="ctl01" value="Log In" style="font-size:XX-Large;font-weight:bold;height:62px;">
+        </td>
+        <td class="style1">
+          User Name:
+        </td>
+        <td class="style1">
+          <input name="UserName" type="text" id="UserName">
+        </td>
+        <td class="style3">
+            <font color="red"><span id="l_Login"></span></font> &nbsp;
+            <font color="black"><span id="l_or"></span></font>
+        </td>
+        <td class="style1" rowspan="2">
+            &nbsp;</td>
+      </tr>
+      <tr>	
+        <td class="style2">
+          Password:
+        </td>
+        <td class="style2">
+          <input name="Password" type="password" id="Password">
+        </td>
+        <td class="style4">
+          <span id="l_Password" style="color:Red;"></span>
+        </td>
+      </tr>
+      </tbody></table>
+  </form>
+  <hr>
+  <img src="img/pr9.jpg">
+  <h3>&nbsp;</h3>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var loginButton = document.querySelector('input[name="ctl01"]');
+      loginButton.addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent the form from submitting
+        alert('Поздравляю, у вас получилось!');
+      });
+    });
+  </script>
+</body>
+</html>

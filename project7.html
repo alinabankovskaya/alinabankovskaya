@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CS50-Find IP</title>
+  <style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    body {
+        background-color: #e9dcb8;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+    
+    header {
+        background-color: #c7b78b;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+    }
+    
+    .Logo, .Top_menu {
+        padding: 20px;
+        margin-right: 25px;
+        display: inline-block;
+        vertical-align: middle;
+    }
+    
+    .Top_menu li {
+        margin-right: 25px;
+        display: inline-block;
+        vertical-align: middle;
+        font-weight: bold;
+    }
+    
+    .Top_menu a {
+        font-family: arial;
+        font-size: 20px;
+        color: #363326;
+        text-decoration: none;
+        vertical-align: middle;
+        font-weight: bold;
+        text-decoration: underline;
+    }
+    
+    .Top_menu a:hover {
+        color: #635c45;
+    }
+    
+    .Logo h1 {
+        font-family: arial;
+        font-size: 30px;
+        vertical-align: middle;
+        color: #363326;
+    }
+    .Logo a{
+        text-decoration: none;
+    }
+</style>
+</head>
+<body>
+    <header>
+        <div class="All_header_menu">
+          <div class="Logo">
+            <a href="1.html"><h1>Alina</h1></a>
+          </div>
+          <div class="Top_menu">
+            <ul>
+              <li><a href="project0.html">0</a></li>
+              <li><a href="project1.html">1</a></li>
+              <li><a href="project2.html">2</a></li>
+              <li><a href="project3.html">3</a></li>
+              <li><a href="project4.html">4</a></li>
+              <li><a href="project5.html">5</a></li>
+              <li><a href="project6.html">6</a></li>
+              <li><a href="project7.html">7</a></li>
+              <li><a href="project8.html">8</a></li>
+              <li><a href="project9.html">9</a></li>
+              <li><a href="Handouts.html">Handouts</a></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+    <p id="demo"></p>
+    <script>
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.open("GET", "http://ip-api.com/json/", true);
+        xmlhttp.send();
+        xmlhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var myObj = JSON.parse(this.responseText);
+                document.getElementById("demo").innerHTML = myObj.query;
+            }
+        };
+    </script>
+    <script src="1.js"></script>
+</body>
+</html>

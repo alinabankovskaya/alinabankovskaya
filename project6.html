@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JSON</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    body {
+        background-color: #e9dcb8;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+    
+    header {
+        background-color: #c7b78b;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+    }
+    
+    .Logo, .Top_menu {
+        padding: 20px;
+        margin-right: 25px;
+        display: inline-block;
+        vertical-align: middle;
+    }
+    
+    .Top_menu li {
+        margin-right: 25px;
+        display: inline-block;
+        vertical-align: middle;
+        font-weight: bold;
+    }
+    
+    .Top_menu a {
+        font-family: arial;
+        font-size: 20px;
+        color: #363326;
+        text-decoration: none;
+        vertical-align: middle;
+        font-weight: bold;
+        text-decoration: underline;
+    }
+    
+    .Top_menu a:hover {
+        color: #635c45;
+    }
+    
+    .Logo h1 {
+        font-family: arial;
+        font-size: 30px;
+        vertical-align: middle;
+        color: #363326;
+    }
+</style>
+</head>
+<body>
+  <header>
+    <div class="All_header_menu">
+      <div class="Logo">
+        <a href="1.html"><h1>Alina</h1></a>
+      </div>
+      <div class="Top_menu">
+        <ul>
+          <li><a href="project0.html">0</a></li>
+          <li><a href="project1.html">1</a></li>
+          <li><a href="project2.html">2</a></li>
+          <li><a href="project3.html">3</a></li>
+          <li><a href="project4.html">4</a></li>
+          <li><a href="project5.html">5</a></li>
+          <li><a href="project6.html">6</a></li>
+          <li><a href="project7.html">7</a></li>
+          <li><a href="project8.html">8</a></li>
+          <li><a href="project9.html">9</a></li>
+          <li><a href="Handouts.html">Handouts</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+    <p id="demo"></p>
+    <script>
+        var minskJSON = '{"name":"Alina", "city":"Minsk", "managers":[{"firstName":"Bill", "lastName":"Gates"},{"firstName":"Mike", "lastName":"Dell"},{"firstName":"Elon", "lastName":"Musk"}]}';
+        var myObj = JSON.parse(minskJSON);
+        document.getElementById("demo").innerHTML="<b>"+myObj.name+"</b> from <b>" +myObj.city + "</b>";
+        
+        function jSave() {
+          alert("Save");
+          myObj = { name: "Alina", city: "Minsk", managers: [
+            {firstName: "Bill", lastName: "Gates"},
+            {firstName: "Mike", lastName: "Dell"},
+            {firstName: "Elon", lastName: "Musk"}
+          ]};
+          minskJSON = JSON.stringify(myObj);
+          localStorage.setItem("testJSON", minskJSON);
+        }
+
+        function jRetrieve() {
+          var text = localStorage.getItem("testJSON");
+          var obj = JSON.parse(text);
+          document.getElementById("demo").innerHTML = "<b>"+obj.name + "</b> from <b>" + obj.city + "</b>";
+          
+          var managersHTML = "";
+          for (var i = 0; i < obj.managers.length; i++) {
+            managersHTML += "<p>Manager: " + obj.managers[i].firstName + " " + obj.managers[i].lastName + "</p>";
+          }
+          document.getElementById("demo").innerHTML += managersHTML;
+        }
+    </script>
+
+    <p id="demo"></p>
+    <button onClick="jSave()">Save</button>
+    <button onClick="jRetrieve()">Retrieve</button>
+</body>
+</html>
